@@ -1,14 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Quicksand:wght@700&family=Sniglet:wght@800&display=swap");
+@font-face {
+  font-family: "Lato";
+  src: url("../media/fonts/Lato-ExtraBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 900;
+}
 :root {
-    font-size: 10px;
-    box-sizing: border-box;
+  font-size: 10px;
+  box-sizing: border-box;
 }
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
 }
 
-header {
-    background-color: orangered;
+body {
+  font-family: "Lato", sans-serif;
+  background-color: lightcoral;
+}
+
+.container {
+  width: 100%;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+}
+
+.header {
+  background-color: white;
+  border-bottom: 1px solid #6a6c6f;
+}
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.8rem;
+  padding-bottom: 0.7rem;
+}
+.header-logo img {
+  width: 6.3rem;
+  height: 6.5rem;
+}
+.header-logo a {
+  display: flex;
+  text-decoration: none;
+}
+.header-logo p {
+  margin-left: 0.4rem;
+  padding-left: 0.3rem;
+}
+.header-logo p b {
+  display: block;
+  font-size: 3.165rem;
+  letter-spacing: 0.4rem;
+  color: #011847;
+  font-weight: 900;
+}
+.header-logo p span {
+  font-size: 1.8rem;
+  color: #84bc22;
+}
+.header-nav {
+  position: relative;
+}
+.header-nav__toggler {
+  display: none;
+}
+.header-nav__toggler .connector {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.header-nav__toggler .connector span {
+  position: relative;
+  display: block;
+  height: 0.2rem;
+  width: 2.8rem;
+  background-color: black;
+}
+.header-nav__toggler .connector span:after, .header-nav__toggler .connector span:before {
+  content: "";
+  position: absolute;
+  height: 0.3rem;
+  width: 2.8rem;
+  background-color: black;
+}
+.header-nav__toggler .connector span:before {
+  top: -1rem;
+}
+.header-nav__toggler .connector span:after {
+  bottom: -1rem;
+}
+.header-nav__toggler .isActiveBurger {
+  transition: opacity 0.4s ease-out, transform 0.4s linear;
+}
+.header-nav__toggler .isActiveBurger span {
+  height: 0;
+  transition: transform 0.4s ease;
+}
+.header-nav__toggler .isActiveBurger span:before {
+  bottom: 0;
+  top: 50%;
+  transform: rotate(-45deg);
+}
+.header-nav__toggler .isActiveBurger span:after {
+  top: 0;
+  bottom: 50%;
+  transform: rotate(45deg);
+}
+.header-nav .header-menu {
+  list-style: none;
+  display: inline-block;
+}
+.header-nav .header-menu li {
+  display: inline-block;
+}
+.header-nav .header-menu li a {
+  position: relative;
+  text-decoration: none;
+  font-size: 1.4rem;
+  padding-left: 2.2rem;
+  padding-right: 2.2rem;
+  padding-bottom: 3rem;
+  padding-top: 1.8rem;
+  border: 1px solid transparent;
+  border-bottom: 3px solid transparent;
+  color: black;
+  transition: color 0.2s ease-in;
+}
+.header-nav .header-menu li a:after {
+  content: "";
+  position: absolute;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-top: 3px solid black;
+  border-left: 3px solid black;
+  top: 40%;
+  right: 1rem;
+  transform: translateY(-50%) rotate(45deg);
+  transition: transform 0.4s ease;
+}
+.header-nav .header-menu li a:hover {
+  background-color: #262a32;
+  color: white;
+  border: 1px solid #cccdcf;
+  border-bottom: 3px solid #84bc22;
+}
+.header-nav .header-menu li a:hover:after {
+  border-top: 3px solid white;
+  border-left: 3px solid white;
+  top: 35%;
+  transform: rotate(225deg);
+}
+.header-nav .header-menu li:first-child a {
+  padding-right: 4.2rem;
+}
+.header-nav .header-menu .no-dropdown a:after {
+  visibility: hidden;
+}
+.header-nav .lang,
+.header-nav .currency {
+  display: inline-block;
+  font-size: 1.4rem;
+}
+.header-nav .lang select,
+.header-nav .currency select {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: #45413e;
+}
+.header-nav .lang {
+  margin-left: 2.3rem;
+}
+.header-nav .currency {
+  display: inline-block;
+  margin-left: 3.7rem;
+}
+.header-control a {
+  position: relative;
+  margin-left: 3.5rem;
+  text-decoration: none;
+}
+.header-control a:first-child {
+  margin-left: 0;
+}
+.header-control a img {
+  width: 2.3rem;
+  height: 2.6rem;
+}
+.header-control a #in-bag,
+.header-control a #liked-items {
+  position: absolute;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 1.4rem;
+  right: -1rem;
+  top: -2.4rem;
+  height: 1.8rem;
+  width: 1.8rem;
+  border-radius: 50%;
+  border: 2px solid #84bc22;
+  color: #84bc22;
+  font-weight: bold;
 }

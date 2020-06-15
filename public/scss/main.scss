@@ -1,4 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Quicksand:wght@700&family=Sniglet:wght@800&display=swap");
 @import "./variables.scss";
+
+@font-face {
+    font-family: "Lato";
+    src: url("../media/fonts/Lato-ExtraBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 900;
+}
 
 :root {
     font-size: 10px;
@@ -9,9 +17,206 @@
     margin: 0;
     box-sizing: inherit;
 }
-header {
-    background-color: orangered;
+body {
+    font-family: $mainFont;
+    background-color: lightcoral;
 }
+.container {
+    width: 100%;
+    padding: 0 1.5rem;
+    margin: 0 auto;
+}
+
 ul {
     list-style: none;
+}
+.header {
+    background-color: white;
+
+    border-bottom: 1px solid #6a6c6f;
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 0.8rem;
+        padding-bottom: 0.7rem;
+    }
+    &-logo {
+        img {
+            width: 6.3rem;
+            height: 6.5rem;
+        }
+        a {
+            display: flex;
+            text-decoration: none;
+        }
+        p {
+            margin-left: 0.4rem;
+            padding-left: 0.3rem;
+            b {
+                display: block;
+                font-size: 3.165rem;
+                letter-spacing: 0.4rem;
+                color: $logoBrandDarkBlue;
+                font-weight: 900;
+            }
+            span {
+                font-size: 1.8rem;
+                color: $logoBrandGreen;
+            }
+        }
+    }
+    &-nav {
+        position: relative;
+
+        &__toggler {
+            display: none;
+            .connector {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                cursor: pointer;
+                span {
+                    position: relative;
+                    display: block;
+                    height: 0.2rem;
+                    width: 2.8rem;
+
+                    background-color: black;
+                    &:after,
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        height: 0.3rem;
+                        width: 2.8rem;
+                        background-color: black;
+                    }
+                    &:before {
+                        top: -1rem;
+                    }
+                    &:after {
+                        bottom: -1rem;
+                    }
+                }
+            }
+            .isActiveBurger {
+                transition: opacity 0.4s ease-out, transform 0.4s linear;
+                span {
+                    height: 0;
+                    transition: transform 0.4s ease;
+                    &:before {
+                        bottom: 0;
+                        top: 50%;
+                        transform: rotate(-45deg);
+                    }
+                    &:after {
+                        top: 0;
+                        bottom: 50%;
+                        transform: rotate(45deg);
+                    }
+                }
+            }
+        }
+        .header-menu {
+            list-style: none;
+            display: inline-block;
+            li {
+                display: inline-block;
+                a {
+                    position: relative;
+                    text-decoration: none;
+                    font-size: 1.4rem;
+                    padding-left: 2.2rem;
+                    padding-right: 2.2rem;
+
+                    padding-bottom: 3rem;
+                    padding-top: 1.8rem;
+                    border: 1px solid transparent;
+                    border-bottom: 3px solid transparent;
+                    color: black;
+                    transition: color 0.2s ease-in;
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        height: 0.5rem;
+                        width: 0.5rem;
+                        border-top: 3px solid black;
+                        border-left: 3px solid black;
+                        top: 40%;
+                        right: 1rem;
+                        transform: translateY(-50%) rotate(45deg);
+                        transition: transform 0.4s ease;
+                    }
+                    &:hover {
+                        background-color: #262a32;
+                        color: white;
+                        border: 1px solid #cccdcf;
+                        border-bottom: 3px solid #84bc22;
+                        &:after {
+                            border-top: 3px solid white;
+                            border-left: 3px solid white;
+                            top: 35%;
+                            transform: rotate(225deg);
+                        }
+                    }
+                }
+                &:first-child a {
+                    padding-right: 4.2rem;
+                }
+            }
+            .no-dropdown {
+                a:after {
+                    visibility: hidden;
+                }
+            }
+        }
+        .lang,
+        .currency {
+            display: inline-block;
+            font-size: 1.4rem;
+
+            select {
+                background-color: transparent;
+                outline: none;
+                border: none;
+                color: #45413e;
+            }
+        }
+        .lang {
+            margin-left: 2.3rem;
+        }
+        .currency {
+            display: inline-block;
+            margin-left: 3.7rem;
+        }
+    }
+    &-control {
+        a {
+            position: relative;
+            margin-left: 3.5rem;
+            text-decoration: none;
+            &:first-child {
+                margin-left: 0;
+            }
+            img {
+                width: 2.3rem;
+                height: 2.6rem;
+            }
+            #in-bag,
+            #liked-items {
+                position: absolute;
+                font-size: 1.2rem;
+                text-align: center;
+                line-height: 1.4rem;
+                right: -1rem;
+                top: -2.4rem;
+                height: 1.8rem;
+                width: 1.8rem;
+                border-radius: 50%;
+                border: 2px solid $logoBrandGreen;
+                color: $logoBrandGreen;
+                font-weight: bold;
+            }
+        }
+    }
 }

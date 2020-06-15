@@ -7,10 +7,64 @@
         <link rel="stylesheet" href="css/main.css" />
     </head>
     <body>
-        <header>
+        <header class="header">
             <div class="container">
-                <img src="media/png/header-logo.png" alt="header-logo" />
+                <div class="header__inner">
+                    <div class="header-logo">
+                        <a href="#">
+                            <img src="media/svg/logo.svg" alt="header-logo" />
+                            <p>
+                                <b>OSF</b>
+                                <span>Academy</span>
+                            </p>
+                        </a>
+                    </div>
+                    <nav class="header-nav">
+                        <div class="header-nav__toggler">
+                            <div class="connector">
+                                <span></span>
+                            </div>
+                        </div>
+                        <ul class="header-menu">
+                            <li><a href="#">Services</a></li>
+                            <li class="no-dropdown"><a href="#">Company</a></li>
+                            <li class="no-dropdown"><a href="#">Library</a></li>
+                            <li class="no-dropdown"><a href="#">Contact Us</a></li>
+                        </ul>
+                        <div class="lang">
+                            <select>
+                                <option value="EN">EN</option>
+                                <option value="RO">RO</option>
+                                <option value="UA">UA</option>
+                            </select>
+                        </div>
+                        <div class="currency">
+                            <select>
+                                <option value="US">$ US</option>
+                                <option value="EU">€ EU</option>
+                                <option value="RON">L RON</option>
+                            </select>
+                        </div>
+                    </nav>
+                    <div class="header-control">
+                        <a href="#">
+                            <img src="media/svg/search.svg" alt="search" />
+                            <a href="#"><img src="media/svg/profile.svg" alt="profile user" /></a>
+                        </a>
+                        <a href="#">
+                            <img src="media/svg/heart.svg" alt="heart" />
+                            <div id="liked-items">2</div>
+                        </a>
+                        <a href="#">
+                            <img src="media/svg/shoping-bag.svg" alt="bag" />
+                            <div id="in-bag">3</div>
+                        </a>
+                    </div>
+                </div>
             </div>
         </header>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="js/main.js"></script>
     </body>
 </html>
