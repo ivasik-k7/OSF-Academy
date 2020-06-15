@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="270" height="335" viewBox="0 0 270 335">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #84bc22;
+      }
+    </style>
+  </defs>
+  <rect id="Button" class="cls-1" width="270" height="335" rx="6" ry="6"/>
+</svg>
