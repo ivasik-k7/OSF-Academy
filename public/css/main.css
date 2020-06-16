@@ -771,6 +771,10 @@
     cursor: pointer;
     width: 9rem;
     height: 9rem;
+    transition: transform 0.6s ease;
+  }
+  .p-items-control > a img:hover {
+    transform: scale(1.2);
   }
   .p-items-control > a:last-child img {
     margin-left: 2rem;
@@ -852,6 +856,9 @@
   .p-items .p-items-slider {
     display: none;
   }
+  .p-items .p-items-hided {
+    display: none;
+  }
 }
 .about {
   background-color: #45413e;
@@ -890,6 +897,7 @@
 }
 .about .media-right .about-item__media {
   order: 2;
+  padding-right: 4.2rem;
 }
 .about .media-right .about-item__content {
   padding-left: 0;
@@ -909,9 +917,135 @@
   }
   .about .media-right .about-item__media {
     order: -1;
+    padding-right: 0;
   }
   .about .media-right .about-item__content {
     padding-left: 3rem;
+  }
+}
+.featured {
+  display: none;
+  background-color: #262a32;
+}
+@media (min-width: 128rem) {
+  .featured {
+    display: block;
+  }
+  .featured__inner {
+    padding: 4.5rem 0 6.5rem;
+  }
+  .featured-slider__item {
+    overflow: hidden;
+    width: 25%;
+    padding: 0 1.5rem;
+  }
+  .featured-slider__item .media {
+    width: 100%;
+  }
+  .featured-slider__item .media img {
+    width: 100%;
+    border-radius: 1rem 1rem 0 0;
+  }
+  .featured-slider__item .info {
+    width: 100%;
+    padding: 2.3rem 1.5rem 2.1rem;
+    text-align: center;
+    background-color: white;
+    min-height: 10.3rem;
+    border-radius: 0 0 1rem 1rem;
+    position: relative;
+  }
+  .featured-slider__item .info .featured-title {
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    text-decoration: none;
+    color: #45413e;
+  }
+  .featured-slider__item .info .tag {
+    position: absolute;
+    display: block;
+    margin-top: 2.3rem;
+    text-decoration: none;
+    color: #84bc22;
+    font-size: 1.4rem;
+    left: 50%;
+    bottom: 15%;
+    transform: translateX(-50%);
+  }
+  .featured-slider-control {
+    margin: 3.3rem 0 2.5rem;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+  }
+  .featured-slider-control .separator {
+    color: white;
+    font-weight: 900;
+    font-size: 3rem;
+    letter-spacing: 0.35rem;
+  }
+  .featured-slider-control .separator:before, .featured-slider-control .separator:after {
+    content: "";
+    position: absolute;
+    height: 0.3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 17.5%;
+    background-image: linear-gradient(to top, #9a9c9f, #ffffff, #9a9c9f);
+  }
+  .featured-slider-control .separator:before {
+    left: 30%;
+  }
+  .featured-slider-control .separator:after {
+    right: 30%;
+  }
+  .featured-slider-control .slick-arrow {
+    height: 3rem;
+    width: 3rem;
+    background-image: linear-gradient(to left, #2d343a, #384247, #2d343a);
+    font-size: 0;
+  }
+  .featured-slider-control .slick-prev {
+    position: relative;
+    cursor: pointer;
+  }
+  .featured-slider-control .slick-prev:before {
+    content: "";
+    position: absolute;
+    height: 1rem;
+    width: 1rem;
+    top: 50%;
+    left: 65%;
+    border-top: 3px solid white;
+    border-left: 3px solid white;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  .featured-slider-control .slick-next {
+    position: relative;
+    cursor: pointer;
+  }
+  .featured-slider-control .slick-next:before {
+    position: absolute;
+    content: "";
+    height: 1rem;
+    width: 1rem;
+    top: 50%;
+    right: 20%;
+    border-top: 3px solid white;
+    border-left: 3px solid white;
+    transform: translate(-50%, -50%) rotate(135deg);
+  }
+  .featured-section-title {
+    text-align: center;
+    color: white;
+    font-weight: 900;
+    font-size: 3.6rem;
+  }
+  .featured-subtitle {
+    margin-top: 1.8rem;
+    text-align: center;
+    color: white;
+    font-size: 1.8rem;
   }
 }
 @font-face {
@@ -946,7 +1080,24 @@ ul {
   list-style: none;
 }
 
+.footer {
+  background-color: white;
+}
 .footer__inner {
   display: flex;
   justify-content: space-between;
+}
+.footer-socials a {
+  text-decoration: none;
+  margin-left: 2.4rem;
+}
+.footer-socials a:first-child {
+  margin-left: 0;
+}
+.footer-socials i {
+  font-size: 2.4rem;
+  color: #868380;
+}
+.footer-socials i:hover {
+  color: #6d9826;
 }

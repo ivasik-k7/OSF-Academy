@@ -1,0 +1,132 @@
+.featured {
+    display: none;
+    background-color: #262a32;
+    &-slider {
+    }
+}
+@media (min-width: 128rem) {
+    .featured {
+        display: block;
+        &__inner {
+            padding: 4.5rem 0 6.5rem;
+        }
+        &-slider {
+            &__item {
+                overflow: hidden;
+                width: 25%;
+                padding: 0 1.5rem;
+                .media {
+                    width: 100%;
+                    img {
+                        width: 100%;
+                        border-radius: 1rem 1rem 0 0;
+                    }
+                }
+                .info {
+                    width: 100%;
+                    padding: 2.3rem 1.5rem 2.1rem;
+                    text-align: center;
+                    background-color: white;
+                    min-height: 10.3rem;
+                    border-radius: 0 0 1rem 1rem;
+                    position: relative;
+
+                    .featured-title {
+                        font-size: 1.6rem;
+                        line-height: 1.8rem;
+                        text-decoration: none;
+                        color: #45413e;
+                    }
+                    .tag {
+                        position: absolute;
+                        display: block;
+                        margin-top: 2.3rem;
+                        text-decoration: none;
+                        color: #84bc22;
+                        font-size: 1.4rem;
+                        left: 50%;
+                        bottom: 15%;
+                        transform: translateX(-50%);
+                    }
+                }
+            }
+            &-control {
+                margin: 3.3rem 0 2.5rem;
+                display: flex;
+                justify-content: space-evenly;
+                position: relative;
+
+                .separator {
+                    color: white;
+                    font-weight: 900;
+                    font-size: 3rem;
+                    letter-spacing: 0.35rem;
+                    &:before,
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        height: 0.3rem;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 17.5%;
+                        background-image: linear-gradient(to top, #9a9c9f, #ffffff, #9a9c9f);
+                    }
+                    &:before {
+                        left: 30%;
+                    }
+                    &:after {
+                        right: 30%;
+                    }
+                }
+                .slick-arrow {
+                    height: 3rem;
+                    width: 3rem;
+                    background-image: linear-gradient(to left, #2d343a, #384247, #2d343a);
+                    font-size: 0;
+                }
+                .slick-prev {
+                    position: relative;
+                    cursor: pointer;
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        height: 1rem;
+                        width: 1rem;
+                        top: 50%;
+                        left: 65%;
+                        border-top: 3px solid white;
+                        border-left: 3px solid white;
+                        transform: translate(-50%, -50%) rotate(-45deg);
+                    }
+                }
+                .slick-next {
+                    position: relative;
+                    cursor: pointer;
+                    &:before {
+                        position: absolute;
+                        content: "";
+                        height: 1rem;
+                        width: 1rem;
+                        top: 50%;
+                        right: 20%;
+                        border-top: 3px solid white;
+                        border-left: 3px solid white;
+                        transform: translate(-50%, -50%) rotate(135deg);
+                    }
+                }
+            }
+        }
+        &-section-title {
+            text-align: center;
+            color: white;
+            font-weight: 900;
+            font-size: 3.6rem;
+        }
+        &-subtitle {
+            margin-top: 1.8rem;
+            text-align: center;
+            color: white;
+            font-size: 1.8rem;
+        }
+    }
+}

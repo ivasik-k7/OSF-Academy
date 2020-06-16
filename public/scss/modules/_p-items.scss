@@ -198,6 +198,10 @@
 
                     width: 9rem;
                     height: 9rem;
+                    transition: transform 0.6s ease;
+                    &:hover {
+                        transform: scale(1.2);
+                    }
                 }
                 &:last-child img {
                     margin-left: 2rem;
@@ -281,6 +285,9 @@
             }
         }
         .p-items-slider {
+            display: none;
+        }
+        .p-items-hided {
             display: none;
         }
     }

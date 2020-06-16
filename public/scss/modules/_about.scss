@@ -35,6 +35,7 @@
     .media-right {
         .about-item__media {
             order: 2;
+            padding-right: 4.2rem;
         }
         .about-item__content {
             padding-left: 0;
@@ -58,6 +59,7 @@
         .media-right {
             .about-item__media {
                 order: -1;
+                padding-right: 0;
             }
             .about-item__content {
                 padding-left: 3rem;

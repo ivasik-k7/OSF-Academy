@@ -6,6 +6,7 @@
 @import "./modules/banner.scss";
 @import "./modules/p-items.scss";
 @import "./modules/about.scss";
+@import "./modules/featured.scss";
 ///////////////////
 
 @font-face {
@@ -39,8 +40,25 @@ ul {
 }
 
 .footer {
+    background-color: white;
     &__inner {
         display: flex;
         justify-content: space-between;
+    }
+    &-socials {
+        a {
+            text-decoration: none;
+            margin-left: 2.4rem;
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+        i {
+            font-size: 2.4rem;
+            color: #868380;
+            &:hover {
+                color: #6d9826;
+            }
+        }
     }
 }
