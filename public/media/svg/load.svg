@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="19" height="15" viewBox="0 0 19 15">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 30px;
+        fill: #fff;
+        text-anchor: middle;
+        font-family: WebSymbolsLiga;
+      }
+    </style>
+  </defs>
+  <text id="U" class="cls-1" x="-12.644" y="-4.593"><tspan x="-12.644">U</tspan></text>
+</svg>

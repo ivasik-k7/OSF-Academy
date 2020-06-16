@@ -1,0 +1,16 @@
+<svg id="_2" data-name="2" xmlns="http://www.w3.org/2000/svg" width="90" height="90.002" viewBox="0 0 90 90.002">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #e73c68;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="45" cy="45.001" r="45"/>
+  <path id="Heart_24x24_" data-name="Heart (24x24)" class="cls-2" d="M862.272,974a8.268,8.268,0,0,0,0-11.619,8.085,8.085,0,0,0-5.9-2.406c-2.979.051-7.892,4.028-7.892,4.028s-5.052-4.034-8.105-4.029a8.081,8.081,0,0,0-5.745,2.407,8.268,8.268,0,0,0,0,11.619l13.819,13.939Z" transform="translate(-802.438 -926.938)"/>
+</svg>

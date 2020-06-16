@@ -1,0 +1,16 @@
+<svg id="_1" data-name="1" xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 90 90">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #23c46e;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <circle id="Ellipse_2_copy" data-name="Ellipse 2 copy" class="cls-1" cx="45" cy="45" r="45"/>
+  <path id="Plus_24x24_" data-name="Plus (24x24)" class="cls-2" d="M58.845,48.984H48.5V59.332a0.609,0.609,0,0,1-.609.608h-4.87a0.609,0.609,0,0,1-.609-0.608V48.984H32.062a0.608,0.608,0,0,1-.609-0.609V43.506a0.609,0.609,0,0,1,.609-0.609H42.41V32.549a0.609,0.609,0,0,1,.609-0.609h4.87a0.609,0.609,0,0,1,.609.609V42.9H58.845a0.608,0.608,0,0,1,.609.609v4.869A0.608,0.608,0,0,1,58.845,48.984Z" transform="translate(-0.438 -0.938)"/>
+</svg>

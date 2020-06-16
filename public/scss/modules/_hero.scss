@@ -1,0 +1,240 @@
+.hero {
+    background-color: white;
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 2.1rem;
+        padding-bottom: 2.1rem;
+    }
+    &-slider {
+        border-radius: 1rem;
+        flex-basis: 100%;
+        position: relative;
+        overflow: hidden;
+        &__item {
+            position: relative;
+            overflow: hidden;
+            height: 47.2rem;
+            img {
+                height: 100%;
+                width: 100%;
+            }
+            .backdrop {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                top: 0;
+                background-color: rgba($color: #000000, $alpha: 0.4);
+            }
+            .hero-content {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                top: 0;
+                display: flex;
+                align-items: center;
+                color: white;
+                .wrap {
+                    padding: 0 1.5rem;
+                    position: relative;
+                    text-align: center;
+                    h2 {
+                        text-align: left;
+                        font-size: 2.5rem;
+                    }
+                    h4 {
+                        text-align: left;
+                        font-size: 1.4rem;
+                        margin-top: 5.3rem;
+                        margin-bottom: 4rem;
+                    }
+                    button {
+                        text-align: center;
+                        cursor: pointer;
+                        text-transform: uppercase;
+                        padding: 1.3rem 3.3rem;
+                        background-color: transparent;
+                        border: 2px solid #87baa9;
+                        color: white;
+                        outline: none;
+                        border-radius: 2.3rem;
+                    }
+                }
+            }
+        }
+        .slick-dots {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 5%;
+            li {
+                display: inline-block;
+                button {
+                    cursor: pointer;
+                    font-size: 0;
+                    height: 0.9rem;
+                    width: 0.9rem;
+                    background-color: #b6b9b5;
+                    border: 3px solid transparent;
+                    outline: none;
+                    border-radius: 50%;
+                    margin-left: 1.4rem;
+                }
+                &:first-child button {
+                    margin-left: 0;
+                }
+            }
+            .slick-active {
+                button {
+                    height: 1.5rem;
+                    width: 1.5rem;
+                    border: 3px solid white;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+    &-korting {
+        display: none;
+    }
+}
+
+@media (min-width: 128rem) {
+    .hero {
+        &__inner {
+        }
+        &-slider {
+            flex-basis: 72%;
+            &__item {
+                height: 50.5rem;
+                img {
+                    height: 100%;
+                    width: 140%;
+                }
+                .hero-content {
+                    .wrap {
+                        padding: 0 6rem;
+                        text-align: left;
+                        h2 {
+                            width: 90%;
+                            font-size: 4.8rem;
+                        }
+                        h4 {
+                            margin-top: 6rem;
+                            width: 52%;
+                            height: 3rem;
+                            overflow: hidden;
+                        }
+                        button {
+                            margin-top: 4.2rem;
+                            font-size: 1.4rem;
+                            border: 2px solid #a3c1c9;
+                            border-radius: 2.3rem;
+                            padding: 1.5rem 4.7rem 1.5rem 3.3rem;
+                            &:hover {
+                                background-color: #a3c1c9;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &-korting {
+            display: block;
+            flex-basis: 25%;
+            text-align: center;
+            .korting-card {
+                display: inline-block;
+                position: relative;
+                width: 100%;
+                min-height: 33.4rem;
+                text-decoration: none;
+                overflow: hidden;
+                &:hover {
+                    img {
+                        transform: scale(1.4) rotate(10deg) translateX(2rem);
+                    }
+                    .korting-content {
+                        color: rgb(255, 244, 244);
+                    }
+                }
+
+                .korting-backdrop {
+                    border-radius: 1rem;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background-color: #84bc22;
+                }
+                img {
+                    position: absolute;
+                    bottom: -1rem;
+                    left: 0;
+                    z-index: 14;
+                    transition: transform 0.6s ease;
+                }
+                .korting-content {
+                    position: absolute;
+                    left: 50%;
+                    top: 10%;
+                    transform: translate(-50%);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    z-index: 15;
+                    color: white;
+                    transition: color 0.4s linear;
+
+                    b {
+                        margin-top: 16%;
+                        margin-bottom: 16%;
+                        font-weight: 900;
+                        font-size: 10rem;
+                    }
+                    span {
+                        text-transform: uppercase;
+                        font-size: 2.4rem;
+                        line-height: 3rem;
+                    }
+                }
+            }
+            h5 {
+                margin-top: 3.4rem;
+                margin-bottom: 1.5rem;
+                font-size: 1.8rem;
+                line-height: 1.8rem;
+                color: #45413e;
+            }
+            & > span {
+                display: block;
+                width: 75%;
+                margin: 0 auto;
+                font-size: 1.3rem;
+                color: #45413e;
+                margin-bottom: 2.8rem;
+            }
+            .follow-btn {
+                text-decoration: none;
+                position: relative;
+                padding: 1.5rem 5.3rem;
+                color: #3a5b96;
+                border: 2px solid #3a5b96;
+                border-radius: 2rem;
+                font-size: 1.4rem;
+                text-transform: uppercase;
+                img {
+                    height: 1.7rem;
+                    width: 0.8rem;
+                    position: absolute;
+                    left: 2.3rem;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+}
