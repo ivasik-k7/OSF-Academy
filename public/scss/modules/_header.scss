@@ -209,9 +209,9 @@
             .header-menu {
                 list-style: none;
                 display: inline-block;
-                li {
+                & > li {
                     display: inline-block;
-                    a {
+                    & > a {
                         position: relative;
                         text-decoration: none;
                         font-size: 1.4rem;
