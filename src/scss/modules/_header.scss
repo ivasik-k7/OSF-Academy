@@ -252,6 +252,48 @@
                     &:first-child a {
                         padding-right: 4.2rem;
                     }
+                    .dropdown-menu {
+                        display: none;
+                        z-index: 89;
+                        background-color: #262a32;
+                        position: absolute;
+                        width: 500%;
+                        left: -197%;
+                        top: 4.8rem;
+                        padding: 6rem 0 5rem;
+                        &__inner {
+                            display: flex;
+                            justify-content: space-between;
+                            .dropdown-title {
+                                font-weight: 900;
+                                text-transform: uppercase;
+                                font-size: 1.4rem;
+                                color: white;
+                                margin-bottom: 3.2rem;
+                            }
+                            .lists {
+                                display: flex;
+                                li {
+                                    margin-right: 2rem;
+                                    a {
+                                        text-decoration: none;
+                                        color: white;
+                                        font-size: 1.6rem;
+                                        line-height: 3.1rem;
+                                        &:hover {
+                                            color: #84bc22;
+                                        }
+                                    }
+                                }
+                            }
+                            .right {
+                                overflow: hidden;
+                                img {
+                                    height: 100%;
+                                }
+                            }
+                        }
+                    }
                 }
                 .no-dropdown {
                     a:after {

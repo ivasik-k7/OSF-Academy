@@ -1,4 +1,18 @@
+import "../scss/styles.scss";
+
 $(document).ready(() => {
+    //COOKIE
+    function hideCookie() {
+        $(".cookie").fadeOut(400);
+    }
+
+    $(".cookie-accept").on("click", () => {
+        hideCookie();
+    });
+    $(".cookie-close").on("click", () => {
+        hideCookie();
+    });
+
     //BURGER//
     $(".connector").click(() => {
         $(".connector").toggleClass("isActiveBurger");
@@ -49,5 +63,10 @@ $(document).ready(() => {
     $(".load-more").click(() => {
         $(".p-items-hided").fadeIn(600);
         $(".load-more").fadeOut(300);
+    });
+    //LOGIN
+    $('a[title="Login"]').click((e) => {
+        e.preventDefault();
+        $(".login").fadeIn(300);
     });
 });

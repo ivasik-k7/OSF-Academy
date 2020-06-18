@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Quicksand:wght@700&family=Sniglet:wght@800&display=swap");
+@import "./variables.scss";
+//SECTION-MODULES//
+@import "./modules/header.scss";
+@import "./modules/hero.scss";
+@import "./modules/banner.scss";
+@import "./modules/p-items.scss";
+@import "./modules/about.scss";
+@import "./modules/featured.scss";
+@import "./modules/footer.scss";
+@import "./modules/modals.scss";
+///////////////////
+
+@font-face {
+    font-family: "Lato";
+    src: url("../fonts/Lato-ExtraBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 900;
+}
+
+:root {
+    font-size: 10px;
+    box-sizing: border-box;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+body {
+    font-family: $mainFont;
+    background-color: lightcoral;
+}
+.container {
+    width: 100%;
+    padding: 0 1.5rem;
+    margin: 0 auto;
+}
+
+ul {
+    list-style: none;
+}

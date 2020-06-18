@@ -17,8 +17,7 @@
             height: 47.2rem;
             img {
                 height: 100%;
-                object-fit: fill;
-                object-position: right;
+                width: 100%;
             }
             .backdrop {
                 position: absolute;
@@ -227,13 +226,19 @@
                 border-radius: 2rem;
                 font-size: 1.4rem;
                 text-transform: uppercase;
-                img {
-                    height: 1.7rem;
-                    width: 0.8rem;
+                i {
+                    font-size: 2rem;
                     position: absolute;
                     left: 2.3rem;
                     top: 50%;
                     transform: translateY(-50%);
+                }
+                &:hover {
+                    background-color: #3a5b96;
+                    color: white;
+                    i {
+                        color: white;
+                    }
                 }
             }
         }
