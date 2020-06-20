@@ -1,0 +1,62 @@
+.route {
+    border-top: 2px solid #ece7e0;
+    text-align: center;
+    font-weight: "Lato";
+    font-weight: normal;
+    padding: 2.5rem 0;
+    &-path {
+        font-size: 1.3rem;
+        color: #bdc3c7;
+        a {
+            text-decoration: none;
+            color: #84bc22;
+            margin-right: 1.4rem;
+        }
+        span {
+            text-transform: uppercase;
+            color: #45413e;
+            margin-left: 1.4rem;
+        }
+    }
+    &-info {
+        position: relative;
+        h4 {
+            font-size: 4.8rem;
+            font-weight: 900;
+            color: #45413e;
+            &:before,
+            &:after {
+                content: "";
+                position: absolute;
+                height: 0.2rem;
+                background-color: #e5e2df;
+                width: 30%;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            &:before {
+                left: 0;
+            }
+            &::after {
+                right: 0;
+            }
+        }
+    }
+}
+@media (min-width: 128rem) {
+    .container {
+        max-width: 128rem;
+    }
+    .route {
+        padding: 5rem 0;
+
+        &-info {
+            h4 {
+                &:before,
+                &:after {
+                    width: 43%;
+                }
+            }
+        }
+    }
+}
