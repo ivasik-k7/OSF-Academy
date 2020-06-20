@@ -8,6 +8,7 @@
 @import "./modules/about.scss";
 @import "./modules/featured.scss";
 @import "./modules/footer.scss";
+@import "./modules/to-top.scss";
 @import "./modules/modals.scss";
 ///////////////////
 
@@ -39,4 +40,50 @@ body {
 
 ul {
     list-style: none;
+}
+.show {
+    display: inline-block !important;
+}
+.control-sprite {
+    fill: #939599;
+    width: 3.2rem;
+    height: 2.6rem;
+    transition: fill 0.6s linear;
+    &:hover {
+        fill: white;
+    }
+}
+.control {
+    align-items: center;
+    border-top: 1px dashed rgba($color: #e8e2d6, $alpha: 0.5);
+    border-bottom: 1px dashed rgba($color: #e8e2d6, $alpha: 0.5);
+    padding-top: 1.9rem;
+    padding-bottom: 1.2rem;
+    a {
+        position: relative;
+        margin-left: 3.1rem;
+        text-decoration: none;
+        &:first-child {
+            margin-left: 0;
+        }
+        img {
+            width: 2.3rem;
+            height: 2.6rem;
+        }
+        #in-bag,
+        #liked-items {
+            position: absolute;
+            font-size: 1.2rem;
+            text-align: center;
+            line-height: 1.1rem;
+            right: -1rem;
+            top: -0.8rem;
+            height: 1.8rem;
+            width: 1.8rem;
+            border-radius: 50%;
+            border: 2px solid $logoBrandGreen;
+            color: $logoBrandGreen;
+            font-weight: bold;
+        }
+    }
 }

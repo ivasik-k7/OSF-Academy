@@ -1,9 +1,73 @@
 .footer {
+    padding-top: 2.3rem;
+    padding-bottom: 0;
+    //padding-bottom: 6.6rem;
     background-color: white;
     &__inner {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        .footer-title {
+            position: relative;
+            font-size: 1.3rem;
+            font-weight: bold;
+            padding: 1.4rem 0;
+            text-transform: uppercase;
+            &:after {
+                content: "";
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%) rotate(225deg);
+                height: 0.4rem;
+                width: 0.4rem;
+                border-top: 0.3rem solid black;
+                border-left: 0.3rem solid black;
+            }
+        }
+        .footer-title-active {
+            &:after {
+                transform: rotate(45deg);
+            }
+        }
+        .footer-copy {
+            .copy {
+                span {
+                    display: block;
+                    font-size: 1.3rem;
+                }
+            }
+        }
+        .footer-copy,
+        .footer-categories,
+        .footer-about,
+        .footer-socials {
+            width: 100%;
+            .lists {
+                display: none;
+                ul {
+                    width: 70%;
+                    font-size: 1.3rem;
+                    span {
+                        display: block;
+                    }
+                    li + li {
+                        margin-top: 2.2rem;
+                    }
+                    a {
+                        color: #45413a;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2.8rem;
+            margin-bottom: 6.5rem;
+        }
     }
     &-socials {
         a {
@@ -21,6 +85,13 @@
             }
         }
     }
+    &-control {
+        width: 100%;
+        padding: 0 1.5rem;
+        justify-content: center;
+        display: flex;
+        background-color: #262a32;
+    }
 }
 @media (min-width: 128rem) {
     .footer {
@@ -28,22 +99,55 @@
         &__inner {
             display: flex;
             justify-content: space-between;
-            .lists {
-                display: flex;
-                justify-content: space-between;
-                li {
-                    font-size: 1.3rem;
-                    line-height: 3.1rem;
-                    a {
-                        text-decoration: none;
-                        color: #45413e;
-                        span {
-                            display: block;
+            .footer-copy,
+            .footer-categories,
+            .footer-about {
+                .lists {
+                    display: flex;
+                    justify-content: space-between;
+                    ul {
+                        width: 100%;
+                        li {
+                            font-size: 1.3rem;
+                            line-height: 3.1rem;
+                            a {
+                                text-decoration: none;
+                                color: #45413e;
+                                span {
+                                    display: block;
+                                }
+                                &:hover {
+                                    color: #6d9826;
+                                }
+                            }
                         }
-                        &:hover {
-                            color: #6d9826;
+                        li + li {
+                            margin-top: 0.8rem;
                         }
                     }
+                }
+            }
+            .footer-socials {
+                flex: 1;
+                margin-top: 0;
+                justify-content: center;
+                align-items: flex-start;
+            }
+        }
+        &-copy,
+        &-about,
+        &-social,
+        &-categories {
+            .footer-title {
+                padding: 0;
+                &:after {
+                    border: none;
+                }
+            }
+            .lists {
+                display: block;
+                ul {
+                    width: 100%;
                 }
             }
         }
@@ -76,8 +180,8 @@
         &-about {
             flex: 1;
         }
-        &-social {
-            flex: 1;
+        &-control {
+            display: none;
         }
     }
 }

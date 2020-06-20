@@ -74,7 +74,31 @@
             }
         }
         .header-menu {
+            position: absolute;
+            z-index: 10;
+            width: 100vw;
+            left: -1.5rem;
+            top: 6rem;
+            background-color: #262a32;
+            padding: 0 1.5rem;
             display: none;
+            & > li {
+                margin: 1.5rem 0;
+            }
+            a {
+                color: white;
+                text-transform: uppercase;
+                font-weight: 700;
+                text-decoration: none;
+                font-size: 1.3rem;
+            }
+            .dropdown-menu {
+                display: none;
+                visibility: hidden;
+                &__inner {
+                    display: none;
+                }
+            }
         }
         .currency,
         .lang {
@@ -82,42 +106,14 @@
         }
     }
     &-control {
+        border: none !important;
         display: none;
-        align-items: center;
-        justify-content: space-between;
-        a {
-            position: relative;
-            margin-left: 3.5rem;
-            text-decoration: none;
-            &:first-child {
-                margin-left: 0;
-            }
-            img {
-                width: 2.3rem;
-                height: 2.6rem;
-            }
-            #in-bag,
-            #liked-items {
-                position: absolute;
-                font-size: 1.2rem;
-                text-align: center;
-                line-height: 1.8rem;
-                right: -1rem;
-                top: -0.8rem;
-                height: 1.8rem;
-                width: 1.8rem;
-                border-radius: 50%;
-                border: 2px solid $logoBrandGreen;
-                color: $logoBrandGreen;
-                font-weight: bold;
-            }
-        }
     }
 }
 
 @media (min-width: 128rem) {
     .container {
-        max-width: 120rem;
+        max-width: 128rem;
     }
     .header {
         border-bottom: 2px solid f3f0ea;
@@ -209,10 +205,17 @@
             .header-menu {
                 list-style: none;
                 display: inline-block;
+                position: static;
+                width: auto;
+                background-color: transparent;
+
+                padding: 0;
                 & > li {
                     display: inline-block;
+                    margin: 0;
                     & > a {
                         position: relative;
+                        text-transform: capitalize;
                         text-decoration: none;
                         font-size: 1.4rem;
                         padding-left: 2.2rem;
@@ -253,6 +256,7 @@
                         padding-right: 4.2rem;
                     }
                     .dropdown-menu {
+                        visibility: visible;
                         display: none;
                         z-index: 89;
                         background-color: #262a32;
@@ -280,6 +284,7 @@
                                         color: white;
                                         font-size: 1.6rem;
                                         line-height: 3.1rem;
+                                        text-transform: capitalize;
                                         &:hover {
                                             color: #84bc22;
                                         }
@@ -298,6 +303,18 @@
                 .no-dropdown {
                     a:after {
                         visibility: hidden;
+                    }
+                }
+                .active-droplink {
+                    background-color: #262a32;
+                    color: white;
+                    border: 1px solid #cccdcf;
+                    border-bottom: 3px solid #84bc22;
+                    &:after {
+                        border-top: 3px solid white;
+                        border-left: 3px solid white;
+                        top: 35%;
+                        transform: rotate(225deg);
                     }
                 }
             }

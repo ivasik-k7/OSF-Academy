@@ -1,0 +1,101 @@
+.to-top {
+    z-index: 85;
+    display: none;
+    &__wrapper {
+        position: relative;
+        .inner {
+            position: absolute;
+            right: 4rem;
+            .to-top-button {
+                position: fixed;
+                bottom: 20%;
+                display: block;
+                height: 4rem;
+                width: 4rem;
+                z-index: 10;
+                background-color: #7e7e7e;
+                &:before,
+                &:after {
+                    content: "";
+                    position: absolute;
+                    height: 1.5rem;
+                    width: 1.5rem;
+
+                    border-top: 2px solid white;
+                    border-left: 2px solid white;
+                }
+                &:before {
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%) rotate(45deg);
+                }
+                &:after {
+                    left: 50%;
+                    bottom: 10%;
+                    transform: translate(-50%, -10%) rotate(45deg);
+                }
+                &:hover {
+                    background-color: $logoBrandGreen;
+                    &:before,
+                    &::after {
+                        border-top: 2px solid #262a32;
+                        border-left: 2px solid #262a32;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 78rem) {
+    .to-top {
+        .inner {
+            overflow: hidden;
+            right: 5rem;
+        }
+    }
+}
+@media (min-width: 120rem) {
+    .to-top {
+        display: none;
+        &__wrapper {
+            position: relative;
+            .inner {
+                position: absolute;
+                right: -2rem;
+                bottom: 10rem;
+                .to-top-button {
+                    position: fixed;
+                    bottom: 20rem;
+                    display: block;
+                    height: 4rem;
+                    width: 4rem;
+                    background-color: #7e7e7e;
+                    &:before,
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        height: 1.5rem;
+                        width: 1.5rem;
+
+                        border-top: 1px solid white;
+                        border-left: 1px solid white;
+                    }
+                    &:before {
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%) rotate(45deg);
+                    }
+                    &:after {
+                        left: 50%;
+                        bottom: -10%;
+                        transform: translate(-50%, -50%) rotate(45deg);
+                    }
+                    &:hover {
+                        background-color: #afd23e;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,10 +1,14 @@
 .cookie {
     display: none;
+    z-index: 100;
 }
 
 .login {
     position: absolute;
     display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 @media (min-width: 128rem) {
@@ -79,10 +83,6 @@
     }
     .login {
         display: none;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         &__backdrop {
             position: absolute;
             top: -100vw;
