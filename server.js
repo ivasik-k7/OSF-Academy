@@ -6,5 +6,5 @@ app.use(express.static("public"));
 //
 const PORT = 7200 || process.env.PORT;
 app.listen(PORT, () => {
-    console.log("Listening", PORT);
+    console.log("Listening at:", `http://localhost:${PORT}/main.html`);
 });

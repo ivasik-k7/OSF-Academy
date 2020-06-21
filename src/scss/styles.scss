@@ -9,15 +9,22 @@
 @import "./modules/featured.scss";
 @import "./modules/footer.scss";
 @import "./modules/to-top.scss";
+@import "./modules/route.scss";
+@import "./modules/getaway.scss";
 @import "./modules/modals.scss";
-///////////////////
-
+@import "./modules/release.scss";
+//////////////////
+/////BOOTSTRAP////
+@import "~bootstrap/scss/mixins";
+//////////////////
+///////FONTS//////
 @font-face {
     font-family: "Lato";
     src: url("../fonts/Lato-ExtraBold.ttf") format("truetype");
     font-style: normal;
     font-weight: 900;
 }
+//////////////////
 
 :root {
     font-size: 10px;
@@ -30,7 +37,7 @@
 }
 body {
     font-family: $mainFont;
-    background-color: lightcoral;
+    background-color: #f1edea;
 }
 .container {
     width: 100%;
@@ -40,17 +47,19 @@ body {
 
 ul {
     list-style: none;
+    margin-bottom: 0;
 }
 .show {
     display: inline-block !important;
 }
+//////SPRITES//////
 .control-sprite {
     fill: #939599;
     width: 3.2rem;
     height: 2.6rem;
     transition: fill 0.6s linear;
     &:hover {
-        fill: white;
+        fill: black;
     }
 }
 .control {
@@ -85,5 +94,17 @@ ul {
             color: $logoBrandGreen;
             font-weight: bold;
         }
+    }
+}
+.alert-backdrop {
+    fill: #fbfaf9;
+    transition: fill 1s linear;
+}
+//////////////////
+
+//////////////////
+@media (min-width: 128rem) {
+    .container {
+        max-width: 128rem;
     }
 }
