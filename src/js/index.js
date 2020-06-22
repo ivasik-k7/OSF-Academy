@@ -12,6 +12,52 @@ $(document).ready(() => {
     $(".cookie-close").on("click", () => {
         hideCookie();
     });
+
+    //FILTER
+    ////COLORS
+    $(".colors > div").on("click", function () {
+        $(".colors > div").removeClass("active-color");
+        $(this).addClass("active-color");
+
+        function setStockColors() {
+            $label.css("color", "#45413e");
+            $label.next().css("color", "#45413e");
+        }
+
+        const $attr = $(this).attr("data-color");
+        const $body = $(".filter-body");
+
+        if ($attr == "black") {
+            $body.removeClass();
+            $body.addClass("active-black filter-body");
+        } else if ($attr == "skyblue") {
+            $body.removeClass();
+            $body.addClass("active-skyblue filter-body");
+        } else if ($attr == "green") {
+            $body.removeClass();
+            $body.addClass("active-green filter-body");
+        } else if ($attr == "blue") {
+            $body.removeClass();
+            $body.addClass(`active-blue filter-body`);
+        } else if ($attr == "orange") {
+            $body.removeClass();
+            $body.addClass("active-orange filter-body");
+        } else if ($attr == "red") {
+            $body.removeClass();
+            $body.addClass("active-red filter-body");
+        } else if ($attr == "creme") {
+            $body.removeClass();
+            $body.addClass("active-creme filter-body");
+        } else {
+            $body.removeClass();
+            $body.addClass("active-white filter-body");
+        }
+    });
+    ////PRICE
+    $("#price").on("change", (e) => {
+        console.log(e.target.value);
+    });
+
     //DROPDOWN
     $(".header-menu li:first-child a").on("click", function (e) {
         e.preventDefault();

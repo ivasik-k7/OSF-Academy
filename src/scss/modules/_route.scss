@@ -13,9 +13,12 @@
             margin-right: 1.4rem;
         }
         span {
-            text-transform: uppercase;
             color: #45413e;
             margin-left: 1.4rem;
+            span {
+                margin-left: 0;
+                display: none;
+            }
         }
     }
     &-info {
@@ -30,7 +33,7 @@
                 position: absolute;
                 height: 0.2rem;
                 background-color: #e5e2df;
-                width: 30%;
+                width: 21.5%;
                 top: 50%;
                 transform: translateY(-50%);
             }
@@ -49,12 +52,19 @@
     }
     .route {
         padding: 5rem 0;
+        &-path {
+            span {
+                span {
+                    display: inline;
+                }
+            }
+        }
 
         &-info {
             h4 {
                 &:before,
                 &:after {
-                    width: 43%;
+                    width: 40%;
                 }
             }
         }

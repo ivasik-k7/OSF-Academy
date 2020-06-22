@@ -101,7 +101,225 @@ ul {
     transition: fill 1s linear;
 }
 //////////////////
+.filter {
+    &-hide {
+        text-align: center;
+        margin-bottom: 2rem;
+        button {
+            cursor: pointer;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            color: #8dc63e;
+            font-size: 1.3rem;
+        }
+    }
+    &-body {
+        background-color: white;
+        border-radius: 0.5rem;
+        padding: 1.2rem 1.5rem 2.5rem;
+        &__item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+            label {
+                flex-basis: 25%;
+                color: #45413e;
+                font-size: 1.4rem;
+            }
+            select {
+                flex-basis: 70%;
+                flex-grow: 3;
+                border-radius: 2.5rem;
+                outline: none;
+                border: 0.2rem solid #a2a09e;
+                color: #45413e;
+                background-color: transparent;
+                font-size: 1.4rem;
+                padding-top: 0.9rem;
+                padding-bottom: 0.9rem;
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+            .colors {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                flex-basis: 70%;
+                & > div {
+                    cursor: pointer;
+                    height: 1.4rem;
+                    width: 1.4rem;
+                    border-radius: 50%;
+                    margin-left: 0.9rem;
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                }
+                .active-color {
+                    height: 1.7rem;
+                    width: 1.7rem;
+                    border: 3px solid #45413e;
+                }
+                div[data-color="red"] {
+                    background-color: red;
+                }
+                div[data-color="white"] {
+                    background-color: white;
+                }
+                div[data-color="skyblue"] {
+                    background-color: #43c0cf;
+                }
+                div[data-color="black"] {
+                    background-color: #3d402f;
+                }
+                div[data-color="green"] {
+                    background-color: #4aaf00;
+                }
+                div[data-color="blue"] {
+                    background-color: #315bbd;
+                }
+                div[data-color="creme"] {
+                    background-color: #efead7;
+                }
+                div[data-color="orange"] {
+                    background-color: #ec6115;
+                }
+            }
+        }
+    }
+    .active-white {
+        background-color: white;
+        label {
+            color: #45413e;
+        }
+        select {
+            border: 0.2rem solid #a2a09e;
+            color: #45413e;
+            background-color: transparent;
+        }
+    }
+    .active-black {
+        background-color: #45413e;
+        label {
+            color: orangered;
+        }
+        select {
+            border: 0.2rem solid orangered;
+            color: orangered;
+            background-color: transparent;
+        }
+    }
+    .active-skyblue {
+        background-color: #43c0cf;
+        label {
+            color: #45413e;
+        }
+        select {
+            border: 0.2rem solid #a2a09e;
+            color: #45413e;
+            background-color: transparent;
+        }
+    }
+    .active-green {
+        background-color: #4aaf00;
+        label {
+            color: #352f2b;
+        }
+        select {
+            border: 0.2rem solid #352f2b;
+            color: #352f2b;
+            background-color: transparent;
+        }
+    }
+    .active-blue {
+        background-color: #315bbd;
+        label {
+            color: #352f2b;
+        }
+        select {
+            border: 0.2rem solid #352f2b;
+            color: #352f2b;
+            background-color: transparent;
+        }
+    }
+    .active-orange {
+        background-color: #ec6115;
+        label {
+            color: black;
+        }
+        select {
+            border: 0.2rem solid black;
+            color: black;
+            background-color: transparent;
+        }
+    }
+    .active-red {
+        background-color: red;
+        label {
+            color: black;
+        }
+        select {
+            border: 0.2rem solid black;
+            color: black;
+            background-color: transparent;
+        }
+    }
+    .active-creme {
+        background-color: #efead7;
+        label {
+            color: #45413e;
+        }
+        select {
+            border: 0.2rem solid #a2a09e;
+            color: #45413e;
+            background-color: transparent;
+        }
+    }
+}
 
+@media (min-width: 128rem) {
+    .filter {
+        &-hide {
+            display: none;
+        }
+        &-body {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 1.2rem 1.5rem 2.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            &__item {
+                flex-basis: 33.33%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 2rem;
+                padding-right: 30%;
+                label {
+                    flex-basis: 25%;
+                    color: #45413e;
+                    font-size: 1.4rem;
+                }
+                select {
+                    flex-basis: 100%;
+                    flex-grow: 3;
+                    border-radius: 2.5rem;
+                    outline: none;
+                    border: 0.2rem solid #a2a09e;
+                    color: #45413e;
+                    background-color: transparent;
+                    font-size: 1.4rem;
+                    padding-top: 0.9rem;
+                    padding-bottom: 0.9rem;
+                    padding-left: 2rem;
+                    padding-right: 2rem;
+                }
+            }
+        }
+    }
+}
 //////////////////
 @media (min-width: 128rem) {
     .container {
