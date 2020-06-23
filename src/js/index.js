@@ -1,5 +1,9 @@
 import "../scss/styles.scss";
-import img from "../img/banner-home.png";
+import "./modules/filters";
+import "./modules/timer";
+import CardsBackdrop from "./modules/cards-backdrop";
+import SlickSlider from "./modules/slider";
+import LoadMore from "./modules/load-more";
 
 $(document).ready(() => {
     //COOKIE
@@ -83,51 +87,26 @@ $(document).ready(() => {
     });
 
     //SLIDERS
-    $(".hero-slider").slick({
-        arrows: false,
-        dots: true,
-        autoplay: true,
-        autoplaySpeed: 5000,
-        adaptiveHeight: true,
-        pauseOnHover: true,
-    });
-    $(".p-items-slider").slick({
-        arrows: false,
-        dots: true,
-        adaptiveHeight: true,
-        autoplay: true,
-        autoplaySpeed: 4000,
-        pauseOnHover: true,
-    });
-    $(".featured-slider").slick({
-        dots: false,
-        infinite: true,
-        arrows: true,
-        speed: 500,
-        slidesToShow: 4,
-        slidesToScroll: 2,
-        draggable: false,
-        prevArrow: ".slick-prev",
-        nextArrow: ".slick-next",
-    });
+    const slider = new SlickSlider();
+    slider.startSlider(".featured-slider", true, false, 4, 2, false, false);
+    slider.startSlider(".hero-slider", false, true, 1, 1);
+    slider.startSlider(".p-items-slider", false, true, 1, 1);
+
     //CARD-HOVER
-    $(".p-items-product").on("click", function () {
-        $(this).prev().css("visibility", "visible");
-        $(this).prev().prev().css("display", "block");
-    });
-    $(document).click(function (e) {
-        const $card = $(".p-items-load__item");
-        if (!$card.is(e.target) && $card.has(e.target).length === 0) {
-            $(".p-items-backdrop").css("display", "none");
-            $(".p-items-control").css("visibility", "hidden");
-        }
+    const cb = new CardsBackdrop();
+    cb.render(".p-items-product", ".p-items-backdrop", ".p-items-control");
+    cb.render(".products-card__title", ".products-card__backdrop", ".products-card__control");
+    //LOAD-MORE
+    const load = new LoadMore();
+    load.startLoad(".load-more", ".p-items-hided");
+    load.startLoad(".products-load button", ".load-hide");
+    //HIDE FILTER
+    const $filterHideButton = $(".filter-hide .hide");
+    $filterHideButton.click(() => {
+        $(".filter-body").fadeOut(450);
+        $filterHideButton.hide(500);
     });
 
-    //LOAD-MORE
-    $(".load-more").click(() => {
-        $(".p-items-hided").fadeIn(600);
-        $(".load-more").fadeOut(300);
-    });
     //FOOTER-TAB
     $(document).width() > 1280
         ? null
@@ -141,59 +120,4 @@ $(document).ready(() => {
         e.preventDefault();
         $(".login").fadeIn(300);
     });
-    //TIMER//
-    function getTimeRemaining(finish) {
-        const $t = Date.parse(finish) - Date.parse(new Date());
-        const $sec = Math.floor(($t / 1000) % 60);
-        const $min = Math.floor(($t / 1000 / 60) % 60);
-        const $hrs = Math.floor(($t / (1000 * 60 * 60)) % 24);
-        const $dys = Math.floor(($t / (1000 * 60 * 60 * 24)) % 7);
-        const $wks = Math.floor($t / (1000 * 60 * 60 * 24 * 7));
-        return {
-            $t,
-            $sec,
-            $min,
-            $hrs,
-            $dys,
-            $wks,
-        };
-    }
-    function timerPreferences(el, deadline = "2020-07-01") {
-        const $timer = $(el);
-        const $seconds = $timer.find("#seconds .val");
-        const $minutes = $timer.find("#minutes .val");
-        const $hours = $timer.find("#hours .val");
-        const $days = $timer.find("#days .val");
-        const $weeks = $timer.find("#weeks .val");
-        const clockInterval = setInterval(updateTimer, 1000);
-        updateTimer();
-
-        function zeroFormat(num) {
-            if (num < 10) {
-                return "0" + num;
-            } else {
-                return num;
-            }
-        }
-
-        function updateTimer() {
-            const time = getTimeRemaining(deadline);
-            $seconds.html(zeroFormat(time.$sec));
-            $minutes.html(zeroFormat(time.$min));
-            $hours.html(zeroFormat(time.$hrs));
-            $days.html(zeroFormat(time.$dys));
-            $weeks.html(zeroFormat(time.$wks));
-
-            if (time.$t <= 0) {
-                $seconds.html("00");
-                $minutes.html("00");
-                $hours.html("00");
-                $days.html("00");
-                $weeks.html("00");
-
-                clearInterval(clockInterval);
-            }
-        }
-    }
-    timerPreferences(".release-timer");
 });
